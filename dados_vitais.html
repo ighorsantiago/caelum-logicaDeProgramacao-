@@ -1,0 +1,30 @@
+<meta charset = "UTF-8">
+
+<script>
+	function pulaLinha() {
+		document.write ("<br>");
+	}
+
+	function mostra(frase) {
+		document.write (frase);
+		pulaLinha();
+	}
+	
+	function calculaDiasDeVida (idade) {
+		var dias = idade * 365;
+		return dias;
+	}
+	
+	function batimentosCardiacos(dias) {
+		var batimentos = dias * 24 * 60 * 80;
+		return batimentos;
+	}
+
+	var nome = prompt ("Olá, qual é o seu nome?");
+	var idade = prompt ("Prazer, " + nome + ". \nQuantos anos você tem?");
+//	var dias = calculaDiasDeVida(idade);
+	var batimentos = batimentosCardiacos(calculaDiasDeVida(idade));
+
+//	mostra (nome + ", você já viveu " + dias + " dias");
+	mostra (nome + ", seu coração já bateu " + batimentos + "!" + "<br>Haja coração!")
+</script>

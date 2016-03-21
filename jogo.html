@@ -1,0 +1,44 @@
+<meta charset = "UTF-8">
+
+<script>
+	function pulaLinha() {
+		document.write ("<br>");
+	}
+
+	function mostra(frase) {
+		document.write (frase);
+		pulaLinha();
+	}
+	
+	function sorteia(n) {
+		sorteado = Math.round (Math.random() * n)
+		return sorteado;
+	}
+	
+	var n = prompt ("Escolha o valor máximo para sorteio.");
+	var sorteado = sorteia(n);
+	var palpite = prompt ("Digite seu palpite de 0 a " + n);
+	console.log (sorteado);
+	
+	if(isNaN(palpite)) {
+		mostra ("O valor digitado deve ser um inteiro.");
+	}
+	else {
+
+		if(palpite == sorteado) {
+			mostra ("Parabéns, você acertou!!!");
+		}
+
+		else {
+			mostra ("Errou!!!");
+	
+			if (palpite > sorteado) {
+				mostra ("O número sorteado era menor");
+			}
+
+			if (palpite < sorteado) {
+				mostra ("O número sorteado era maior");
+			}
+		}
+	}
+</script>
