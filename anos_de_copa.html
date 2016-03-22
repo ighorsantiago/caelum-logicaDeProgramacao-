@@ -1,0 +1,51 @@
+<meta charset = "UTF-8">
+
+<script>
+	function pulaLinha() {
+		document.write ("<br>");
+	}
+
+	function mostra(frase) {
+		document.write (frase);
+		pulaLinha();
+	}
+	
+	function ler(texto) {
+		return prompt(texto);
+	}
+	
+	function lerNumeroInteiro(numero) {
+		return parseInt(prompt(numero));
+	}
+
+	function lerNumero(numero) {
+		return parseFloat(prompt(numero));
+	}
+	
+	function lerApenasNumero(msg) {
+		var numero;		
+		while(isNaN(numero)) {
+			numero = parseInt(ler(msg));
+		}
+		return numero;
+	}
+
+	alert("Vamos ver em quais anos tiveram Copa do Mundo");
+	
+	var anoAtual = 2016;
+	var anoCopa = 1930;
+	var anoInicial = lerApenasNumero("Qual é o ano inicial?");
+	var anoLimite = lerApenasNumero("Qual é o ano limite?");
+
+	while (anoCopa <= anoLimite){
+		if(anoCopa >= anoInicial && anoCopa <= anoAtual) {
+			mostra ("Teve copa em " + anoCopa + ".")
+		}
+		
+		if(anoCopa >= anoInicial && anoCopa >= anoAtual) {
+			mostra ("Terá copa em " + anoCopa + ".")
+		}
+
+	anoCopa = anoCopa + 4;
+	}
+</script>
