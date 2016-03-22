@@ -1,0 +1,29 @@
+<meta charset = "UTF-8">
+
+<script>
+	function pulaLinha() {
+		document.write("<br>");
+	}
+
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+	function lerApenasNumero(msg) {
+		var numero;
+
+		while(isNaN(numero)) {
+			numero = parseInt(prompt(msg));
+		}
+
+		return numero;
+	}
+
+	var tabuada = lerApenasNumero("Digite o numero que você quer saber a tabuada...");
+
+	for(multiplicador = 1; multiplicador <= 10; multiplicador++) {
+		var resultado = multiplicador * tabuada;
+		mostra(tabuada + " x " + multiplicador + " = " + resultado);
+	}
+</script>

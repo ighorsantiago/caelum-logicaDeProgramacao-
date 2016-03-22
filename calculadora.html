@@ -1,0 +1,55 @@
+<meta charset = "UTF-8">
+
+<script>
+	function pulaLinha() {
+		document.write("<br>");
+	}
+	
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+
+	function lerApenasNumero(msg) {
+		var numero;
+
+		while(isNaN(numero)) {
+			numero = parseFloat(prompt(msg));
+		}
+
+		return numero;
+	}
+
+	alert("Calculadora");
+
+	var operacao = lerApenasNumero("Escolha a operação a ser feita...\n1 - Adição \n2 - Subtração \n3 - Multiplicação \n4 - Divisão...");
+
+	//SOMA
+	if(operacao == 1) {
+		var numero1 = lerApenasNumero("Digite um número");
+		var numero2 = lerApenasNumero("Digite um número");
+		mostra(numero1 + " + " + numero2 + " = " + (numero1 + numero2));
+	}
+	
+	//SUBTRAÇÃO
+	if(operacao == 2) {
+		var numero1 = lerApenasNumero("Digite um número");
+		var numero2 = lerApenasNumero("Digite um número");
+		mostra(numero1 + " - " + numero2 + " = " + (numero1 - numero2));
+	}
+
+	//MULTIPLICAÇÃO
+	if(operacao == 3) {
+		var numero1 = lerApenasNumero("Digite um número");
+		var numero2 = lerApenasNumero("Digite um número");
+		mostra(numero1 + " x " + numero2 + " = " + (numero1 * numero2));
+	}
+
+	//DIVISÃO
+	if(operacao == 4) {
+		var numero1 = lerApenasNumero("Digite um número");
+		var numero2 = lerApenasNumero("Digite um número");
+		mostra(numero1 + " / " + numero2 + " = " + (numero1 / numero2));
+	}
+</script>
