@@ -1,7 +1,8 @@
 <meta charset = "UTF-8">
 
 <script>
-	function pulaLinha() {
+	
+	function pulaLinha(){
 		document.write("<br>");
 	}
 	
@@ -9,47 +10,56 @@
 		document.write(frase);
 		pulaLinha();
 	}
-
-
-	function lerApenasNumero(msg) {
+	
+	function lerNumero(msg) {
 		var numero;
-
+		
 		while(isNaN(numero)) {
 			numero = parseFloat(prompt(msg));
 		}
-
+		
 		return numero;
 	}
-
-	alert("Calculadora");
-
-	var operacao = lerApenasNumero("Escolha a operação a ser feita...\n1 - Adição \n2 - Subtração \n3 - Multiplicação \n4 - Divisão...");
-
-	//SOMA
-	if(operacao == 1) {
-		var numero1 = lerApenasNumero("Digite um número");
-		var numero2 = lerApenasNumero("Digite um número");
-		mostra(numero1 + " + " + numero2 + " = " + (numero1 + numero2));
+	
+	function adicao(numero1,numero2) {
+		var soma = (numero1 + numero2);
+		return soma;
 	}
 	
-	//SUBTRAÇÃO
+	function subtracao(numero1,numero2) {
+		var subtrai = (numero1 - numero2);
+		return subtrai;
+	}
+	
+	function multiplicacao(numero1,numero2) {
+		var multiplica = (numero1 * numero2);
+		return multiplica;
+	}
+	
+	function divisao(numero1,numero2) {
+		var divide = (numero1 / numero2);
+		return divide;
+	}
+	
+	mostra("<h2>CALCULADORA</h2>")
+	
+	var operacao = lerNumero("Escolha o número da operação a ser feita: \n1 - Adição \n2 - Subtração \n3 - Multiplicação \n4 - Divisão");
+	var numero1 = lerNumero("Digite um numero");
+	var numero2 = lerNumero("Digite um numero");
+	
+	if(operacao == 1) {
+		mostra(numero1 + " + " + numero2 + " = " + adicao(numero1,numero2));
+	}
+	
 	if(operacao == 2) {
-		var numero1 = lerApenasNumero("Digite um número");
-		var numero2 = lerApenasNumero("Digite um número");
-		mostra(numero1 + " - " + numero2 + " = " + (numero1 - numero2));
+		mostra(numero1 + " - " + numero2 + " = " + subtracao(numero1,numero2));
 	}
-
-	//MULTIPLICAÇÃO
+	
 	if(operacao == 3) {
-		var numero1 = lerApenasNumero("Digite um número");
-		var numero2 = lerApenasNumero("Digite um número");
-		mostra(numero1 + " x " + numero2 + " = " + (numero1 * numero2));
+		mostra(numero1 + " x " + numero2 + " = " + multiplicacao(numero1,numero2));
 	}
-
-	//DIVISÃO
+	
 	if(operacao == 4) {
-		var numero1 = lerApenasNumero("Digite um número");
-		var numero2 = lerApenasNumero("Digite um número");
-		mostra(numero1 + " / " + numero2 + " = " + (numero1 / numero2));
+		mostra(numero1 + " / " + numero2 + " = " + divisao(numero1,numero2));
 	}
 </script>
