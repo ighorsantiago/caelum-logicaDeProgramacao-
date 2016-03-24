@@ -1,0 +1,42 @@
+<meta charset = "UTF-8">
+
+<h2>Vamos jogar forca!</h2>
+
+<script>
+
+	function pulaLinha() {
+		document.write("<br>");
+	}
+	
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+	
+	var palavras = [];
+	var perdeu = ["morreu"];
+	var tentativas = 1;
+//	var palpite = 1;
+	var palavraEscolhida = prompt("Digite uma palavra");
+	
+	palavras.push(palavraEscolhida);
+	
+	while(tentativas <= 6) {
+	
+	var chute = prompt("Ok, a palavra ja foi escolhida, vamos começar \nDigite uma letra");
+	
+	for(var i = 0; i < palavras.length; i++) {
+		if(chute == palavras[i]) {
+			alert("A letra digitada existe na palavra");
+		}
+		
+		if(chute != palavras[i]) {
+			mostra(perdeu[i]);
+		}
+	}
+	tentativas++;
+	}
+		
+	mostra(palavras);
+	mostra(chute);
+</script>
