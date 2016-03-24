@@ -1,0 +1,22 @@
+<meta charset = "UTF-8">
+
+<script>
+var segredos = [1, 5, 9, 3];
+var tentativas=1;
+var acertou = false;
+
+while(tentativas <= 3) {
+	var chute = parseInt(prompt("Escolha um numero"));
+	for(var i = 0; i < segredos.length; i++) {
+		if(chute == segredos[i]) {
+			alert("Acertou");
+			acertou = true;
+			break;
+		}
+	}
+	tentativas++;
+}
+if(i == segredos.length) {
+	alert("Game Over");
+}
+</script>

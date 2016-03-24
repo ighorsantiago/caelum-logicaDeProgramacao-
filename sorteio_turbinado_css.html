@@ -1,0 +1,41 @@
+<meta charset = "UTF-8">
+
+<style>
+
+body:hover{
+	transform:rotate(360deg);
+	-webkit-transition:5s;
+}
+
+</style>
+
+<label> Chute </label>
+
+<input id = "chute">
+
+<button id = "botao">
+	Estou com sorte
+</button>
+
+<script>
+	function verificaChute() {
+		var input = document.getElementById("chute");
+
+		var chute = input.value;
+
+		if(chute == sorteado) {
+			alert("Acertou!");
+		}
+
+		else {
+			alert("Errou!");
+		}
+
+		input.value = "";
+		input.focus();
+	}
+
+	var sorteado = Math.round(Math.random() * 10);
+	var button = document.getElementById("botao");
+	button.onclick = verificaChute;
+</script>
