@@ -1,0 +1,30 @@
+<meta charset = "UTF-8">
+
+<script>
+function mostra(frase) {
+	document.write(frase);
+}
+
+function geraFibonacci(x) {
+	var fibonacci = [1,1];
+
+	contador = 1;
+
+	while(contador <= x) {
+
+		n1 = fibonacci[fibonacci.length - 2];
+
+		n2 = fibonacci[fibonacci.length - 1];
+
+		var soma = n1 + n2;
+
+		fibonacci.push(soma);
+
+		contador++;
+	}
+
+	return fibonacci;
+}
+
+mostra(geraFibonacci(prompt("Digite a quantidade de numeros que você quer ver da sequência...")));
+</script>

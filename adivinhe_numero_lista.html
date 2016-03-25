@@ -1,0 +1,53 @@
+<meta charset = "UTF-8">
+
+<script>
+
+function sorteia(fator) {
+	return Math.round(Math.random() * fator);
+}
+
+function geraSegredos(quantidade) {
+	var segredos = [];
+	var contador = 1;
+
+	while(contador <= quantidade) {
+		var segredo = sorteia(10);
+		var repetido = false;
+		
+		for(var posicao = 0; posicao < segredos.length; posicao++) {
+			
+			if(segredo == segredos[posicao]) {
+				repetido = true;
+				break;
+			}
+		}
+
+			if(repetido == false) {
+				segredos.push(segredo);
+				contador++
+			}
+	}
+
+	return segredos;
+}
+
+var segredos = geraSegredos(parseInt(prompt("Escolha a quantidade de valores a serem guardados...")));
+console.log(segredos);
+var tentativas=1;
+var acertou = false;
+
+while(tentativas <= 3) {
+	var chute = parseInt(prompt("Escolha um numero"));
+	for(var i = 0; i < segredos.length; i++) {
+		if(chute == segredos[i]) {
+			alert("Acertou");
+			acertou = true;
+			break;
+		}
+	}
+	tentativas++;
+}
+if(i == segredos.length) {
+	alert("Game Over");
+}
+</script>
